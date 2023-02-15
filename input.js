@@ -1,4 +1,10 @@
 let connection;
+const { MOVE_KEYS } = require("./constants");
+const w = MOVE_KEYS.w;
+const a = MOVE_KEYS.a;
+const d = MOVE_KEYS.d;
+const s = MOVE_KEYS.s;
+const x = MOVE_KEYS.x;
 
 const setupInput = function(conn) {
   connection = conn;
@@ -14,19 +20,19 @@ const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
   }
-  if (data === '\u0077') {
+  if (data === w) {
     connection.write("Move: up");
   }
-  if (data === '\u0061') {
+  if (data === a) {
     connection.write("Move: left");
   }
-  if (data === '\u0073') {
+  if (data === s) {
     connection.write("Move: down");
   }
-  if (data === '\u0064') {
+  if (data === d) {
     connection.write("Move: right");
   }
-  if (data === '\u0078') {
+  if (data === x) {
     connection.write("Say: ❤️❤️❤️❤️❤️");
   }
 };
