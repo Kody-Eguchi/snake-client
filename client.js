@@ -11,11 +11,14 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("connected to the server successfully!");
     conn.write("Name: KE");
+    // conn.write("Move: up");
   });
 
   conn.on("data", (data) => {
     console.log("Server says: ", data);
   });
+
+
   return conn;
 };
 
