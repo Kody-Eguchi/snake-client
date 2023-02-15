@@ -26,6 +26,9 @@ const handleUserInput = function(data) {
   if (data === '\u0064') {
     connection.write("Move: right");
   }
+  if (data === '\u0078') {
+    connection.write("Say: ❤️❤️❤️❤️❤️");
+  }
 };
 
 module.exports = {setupInput};
